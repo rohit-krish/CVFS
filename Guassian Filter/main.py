@@ -25,18 +25,19 @@ def GuassianBlur(img: np.ndarray, sigma: float | int, filter_shape: list | tuple
 
     size_y = filter_shape[0] // 2
     size_x = filter_shape[1] // 2
+    gaussian_filter = np.zeros((filter_shape[0], filter_shape[1]), np.float32)
 
-    # gaussian_filter = np.zeros((filter_shape[0], filter_shape[1]), np.float32)
-    # for x in range(-size, size+1):
-    #     for y in range(-size, size+1):
-    #         x1 = 2*np.pi*(sigma**2)
-    #         x2 = np.exp(-(x**2 + y**2)/(2 * sigma**2))
-    #         gaussian_filter[x+size, y+size] = (1/x1)*x2
+    for x in range(-size_y, size_y+1):
+        for y in range(-size_x, size_x+1):
+            normal = 1 / (2.0 * np.pi * sigma**2.0)
+            exp_term = np.exp(-(x**2 + y**2)/(2 * sigma**2))
+            gaussian_filter[x+size_x, y+size_y] = normal*exp_term
+
     '''or'''
 
-    x, y = np.mgrid[-size_y:size_y+1, -size_x:size_x+1]
-    normal = 1 / (2.0 * np.pi * sigma**2)
-    gaussian_filter = np.exp(-((x**2 + y**2) / (2.0*sigma**2))) * normal
+    # x, y = np.mgrid[-size_y:size_y+1, -size_x:size_x+1]
+    # normal = 1 / (2.0 * np.pi * sigma**2)
+    # gaussian_filter = np.exp(-((x**2 + y**2) / (2.0*sigma**2))) * normal
 
     filtered = np.zeros(img.shape, dtype=np.float32)
     for c in range(3):
