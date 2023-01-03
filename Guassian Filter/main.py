@@ -3,7 +3,7 @@ from PIL import Image
 import numpy as np
 
 
-def GuassianBlur(img: np.ndarray, sigma: float | int, filter_shape: int | None = None):
+def GuassianBlur(img: np.ndarray, sigma: float | int, filter_shape: list | tuple | None = None):
     '''
     - Returns a list that contains the filter and resultant image
 
