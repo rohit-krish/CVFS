@@ -1,6 +1,8 @@
-Python version 3.10.9
+__Python version 3.10.9__
+
 Libraries used:
-1.Numpy version 1.23.5
+
+1. Numpy version 1.23.5
 2. Matplotlib version 3.5.2
 3. Pillow version 9.3.0
 
