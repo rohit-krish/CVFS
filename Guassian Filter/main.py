@@ -1,4 +1,10 @@
-from scipy.ndimage import convolve
+"""
+Created on Wed Jan  2 10:11:08 2023
+
+@author: rohit krishna
+"""
+
+from convolution import convolution
 from PIL import Image
 import numpy as np
 
@@ -19,6 +25,7 @@ def GuassianBlur(img: np.ndarray, sigma: float | int, filter_shape: list | tuple
     >>> g_filter, blur_image = GuassianBlur(img, 4)
     '''
 
+    # generating filter shape with the sigma(standard deviation) given, if filter_shape is None
     if filter_shape == None:
         _ = 2 * int(4 * sigma + 0.5) + 1
         filter_shape = [_, _]
@@ -39,21 +46,23 @@ def GuassianBlur(img: np.ndarray, sigma: float | int, filter_shape: list | tuple
     # normal = 1 / (2.0 * np.pi * sigma**2)
     # gaussian_filter = np.exp(-((x**2 + y**2) / (2.0*sigma**2))) * normal
 
-    filtered = np.zeros(img.shape, dtype=np.float32)
-    for c in range(3):
-        filtered[:, :, c] = convolve(
-            img[:, :, c], gaussian_filter)
+    blurred = np.zeros(img.shape, dtype=np.float32)
+    blurred = convolution(img, gaussian_filter)
 
-    return gaussian_filter, filtered.astype(np.uint8)
+    return gaussian_filter, blurred.astype(np.uint8)
 
 
 if __name__ == '__main__':
     import matplotlib.pyplot as plt
     from PIL import Image
+
     img = np.array(Image.open('../../assets/lenna.png'))
-    g_filter, blur_image = GuassianBlur(img, 4)
+    g_filter, blur_image = GuassianBlur(img, 5)
+
+    # plotting
     plt.subplot(121)
-    plt.imshow(g_filter, cmap='gray')
+    plt.imshow(g_filter, cmap='gist_heat')  # viridis is also cool
     plt.subplot(122)
     plt.imshow(blur_image)
+    plt.tight_layout()
     plt.show()
