@@ -46,18 +46,19 @@ def convolution(image: np.ndarray, kernel: list | tuple) -> np.ndarray:
 
     count = 0  # taking count of the convolution operation being happening
 
+    output_tmp = output.reshape(
+        (output_shape[0]*output_shape[1], output_shape[2])
+    )
+
     for i in range(y_strides):
         for j in range(x_strides):
             for c in range(c_i):
                 sub_matrix = img[i:i+m_k, j:j+n_k, c]
 
-                output_tmp = output.reshape(
-                    (output_shape[0]*output_shape[1], output_shape[2])
-                )
                 output_tmp[count, c] = np.sum(sub_matrix * kernel)
 
-                output = output_tmp.reshape(output_shape)
-
             count += 1
+
+    output = output_tmp.reshape(output_shape)
 
     return output
