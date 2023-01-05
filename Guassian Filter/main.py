@@ -46,7 +46,6 @@ def GuassianBlur(img: np.ndarray, sigma: float | int, filter_shape: list | tuple
             exp_term = np.exp(-(x**2.0 + y**2.0) / (2.0 * sigma**2.0))
             gaussian_filter[y+m_half, x+n_half] = normal * exp_term
 
-    blurred = np.zeros(img.shape, dtype=np.float32)
     blurred = convolution(img, gaussian_filter)
 
     return gaussian_filter, blurred.astype(np.uint8)
