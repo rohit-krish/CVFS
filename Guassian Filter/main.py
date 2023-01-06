@@ -2,6 +2,7 @@
 Created on Wed Jan  2 10:11:08 2023
 
 @author: rohit krishna
+@email   : dev.rohitnp@gmail.com
 """
 
 from convolution import convolution

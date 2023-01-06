@@ -2,7 +2,7 @@
 Created on Wed Jan  4 12:06:28 2023
 
 @author: rohit krishna
-@email   : dev.rohitnp@gmail.com
+@email : dev.rohitnp@gmail.com
 """
 
 import numpy as np
