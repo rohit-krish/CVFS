@@ -15,5 +15,3 @@ Therefore, the pre-requisite is to convert the image to grayscale before followi
 2. https://youtu.be/uihBwtPIBxM
 3. https://youtu.be/sRFM5IEqR2w
 4. https://www.dynamsoft.com/blog/insights/image-processing/image-processing-101-color-space-conversion/
-
-Collected MRI bran image source:- https://www.brainfacts.org/in-the-lab/tools-and-techniques/2014/brain-scans-technologies-that-peer-inside-your-head
