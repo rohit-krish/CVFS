@@ -4,3 +4,4 @@ Coding computer vision related algorithms from "scratch".<br>
 2. Guassian Blur<br>
 3. Histogram Equalization<br>
 4. Otsu's Thresholding<br>
+5. Adaptive Thresholding<br>
