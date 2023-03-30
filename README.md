@@ -1,6 +1,6 @@
 # CVFS (Computer Vision From Scratch)
-Coding computer vision related algorithms from "scratch".
-1.Canny Edge Detection
-2. Guassian Blur
-3. Histogram Equalization
-4. Otsu's Thresholding
+Coding computer vision related algorithms from "scratch".<br>
+1.Canny Edge Detection<br>
+2. Guassian Blur<br>
+3. Histogram Equalization<br>
+4. Otsu's Thresholding<br>
