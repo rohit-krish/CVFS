@@ -1,5 +1,5 @@
 ### I explained it in detail on my [Article](https://medium.com/@rohit-krishna/coding-canny-edge-detection-algorithm-from-scratch-in-python-232e1fdceac7)
-<img src="https://miro.medium.com/max/720/1*fBIv-OhDmeWM4oLEYtKkJw.webp" alt="banner image of my article">
+<img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*Nem2YfNwjQGsENFYXidYuw.jpeg" alt="banner image of my article">
 The Canny edge detection algorithm is composed of 6 steps:
 
 1. Gray Scale conversion
